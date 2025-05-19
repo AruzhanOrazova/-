@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Изменение климата</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #00796b, #004d40);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #00695c;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+    }
+.container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h2 {
+      color: #00796b;
+      border-left: 5px solid #00796b;
+      padding-left: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #004d40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Изменение климата и экстремальные погодные явления</h1>
+    <p>Глобальный вызов XXI века</p>
+  </header>
+
+  <nav>
+    <a onclick="showPage('home')">О проблеме</a>
+    <a onclick="showPage('causes')">Причины</a>
+    <a onclick="showPage('effects')">Последствия</a>
+    <a onclick="showPage('solutions')">Решения</a>
+    <a onclick="showPage('video')">Видео</a>
+  </nav>
+
+  <div class="container">
+    
+    <!-- Главная -->
+    <div id="home" class="page active">
+      <h2>О проблеме</h2>
+      <p>Изменение климата — это долгосрочные сдвиги в температуре и погоде, вызванные деятельностью человека. Оно влияет на природу, экономику и здоровье людей по всему миру.</p>
+      <img src="https://cdn.pixabay.com/photo/2021/03/14/16/58/global-warming-6093253_1280.jpg" alt="Глобальное потепление">
+    </div>
+
+    <!-- Причины -->
+    <div id="causes" class="page">
+      <h2>Причины изменения климата</h2>
+      <ul>
+        <li>Выбросы парниковых газов</li>
+        <li>Вырубка лесов</li>
+        <li>Сжигание угля и нефти</li>
+        <li>Интенсивное животноводство</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2017/04/04/17/49/pollution-2207643_1280.jpg" alt="Загрязнение">
+    </div>
+
+    <!-- Последствия -->
+    <div id="effects" class="page">
+      <h2>Последствия</h2>
+      <ul>
+        <li>Повышение уровня океана</li>
+        <li>Засухи, ураганы, пожары</li>
+        <li>Утрата биоразнообразия</li>
+        <li>Экологические миграции</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2019/11/07/20/55/flood-4608530_1280.jpg" alt="Наводнение">
+    </div>
+<!-- Решения -->
+    <div id="solutions" class="page">
+      <h2>Решения</h2>
+      <ul>
+        <li>Переход на возобновляемые источники энергии</li>
+        <li>Сокращение выбросов</li>
+        <li>Лесовосстановление</li>
+        <li>Образование и международное сотрудничество</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2019/04/06/20/44/wind-turbine-4105748_1280.jpg" alt="Ветроэнергетика">
+    </div>
+
+    <!-- Видео -->
+    <div id="video" class="page">
+      <h2>Видео: почему климат меняется</h2>
+      <iframe src="https://www.youtube.com/embed/EtW2rrLHs08" title="Climate Change Explained" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Climate Site | Все права защищены
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
